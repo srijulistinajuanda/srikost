@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- srikost.supplier tree view -->
+    <record id="srikost_pemilikkost_view_tree" model="ir.ui.view">
+        <field name="name">Daftar Pemilik</field>
+        <field name="model">srikost.pemilikkost</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name" />
+                <field name="alamat" />
+                <field name="no_telp" />
+                <field name="kost_id" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- srikost.pemilikkost form view -->
+    <record id="srikost_pemilikkost_view_form" model="ir.ui.view">
+        <field name="name">Form Pemilik Kost</field>
+        <field name="model">srikost.pemilikkost</field>
+        <field name="arch" type="xml">
+            <form string="Pemilik Kost">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name" />
+                        <field name="alamat" />
+                        <field name="no_telp" />
+                    </group>
+                    <group name="kost" string="Kost">
+                        <field name="kost_id" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- srikost.supplier action window -->
+    <record id="srikost_pemilikkost_action" model="ir.actions.act_window">
+        <field name="name">Pemilik Kost</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">srikost.pemilikkost</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="srikost_pemilikkost_menu_act" 
+        name="Pemilik Kost" 
+        parent="srikost_menu_root" 
+        action="srikost_pemilikkost_action" 
+        sequence="40"/>
+
+</odoo>

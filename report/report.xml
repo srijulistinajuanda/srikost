@@ -1,0 +1,37 @@
+<odoo>
+
+    <!-- Report Pemilik Kost -->
+    <record id="report_pemilikkost_xlsx" model="ir.actions.report">
+        <field name="name">Pemilik Kost Excel</field>
+        <field name="model">srikost.pemilikkost</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">srikost.report_pemilikkost_xlsx</field>
+        <field name="report_file">srikost.report_pemilikkost_xlsx</field>
+        <field name="binding_model_id" ref="model_srikost_pemilikkost"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <!-- Report Penjualan -->
+    <record id="report_penjualan_xlsx" model="ir.actions.report">
+        <field name="name">Penjualan Excel</field>
+        <field name="model">srikost.penjualan</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">srikost.report_penjualan_xlsx</field>
+        <field name="report_file">srikost.report_penjualan_xlsx</field>
+        <field name="binding_model_id" ref="model_srikost_penjualan"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <!-- Report Supplier -->
+    <record id="report_penjualan_faktur_pdf" model="ir.actions.report">
+        <field name="name">Print Faktur</field>
+        <field name="model">srikost.penjualan</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">srikost.report_penjualan_faktur_pdf</field>
+        <field name="report_file">srikost.report_Penjualan_faktur_pdf</field>
+        <field name="binding_model_id" ref="model_srikost_penjualan"/>
+        <field name="binding_type">report</field>
+    </record>
+
+
+</odoo>

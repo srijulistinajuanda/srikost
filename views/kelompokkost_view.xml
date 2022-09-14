@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Perubahannya ada di sini -->
+    <!-- srikost.kelompokbarang tree view -->
+    <record id="srikost_kelompokkost_view_tree" model="ir.ui.view">
+        <field name="name">srikost.kelompokkost.view.tree</field>
+        <field name="model">srikost.kelompokkost</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="kode_kost"/>
+                <field name="jml_kost"/>
+                <field name="daftar_kost"/>
+
+            </tree>
+        </field>
+    </record>
+
+    <!-- srikost.kelompokbarang form view -->
+    <record id="srikost_kelompokkost" model="ir.ui.view">
+        <field name="name">srikost.kelompokkost.view.form</field>
+        <field name="model">srikost.kelompokkost</field>
+        <field name="arch" type="xml">
+            <form string="Kelompok Kost">
+                <sheet>
+                    <group name="Kelompok" string="Posisi Kelompok">
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="kode_kost"/>
+                    </group>
+
+                    <group name="posisi" string="Posisi Kost">
+                        <field name="kost_ids" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+	<!-- Akhir Perubahan -->
+
+    <!-- srikost.kelompokkost action window -->
+    <record id="srikost_kelompokkost_action" model="ir.actions.act_window">
+        <field name="name">Kelompok Kost</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">srikost.kelompokkost</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="srikost_kelompokkost_menu_act"
+        name="Kelompok Kost"
+        parent="srikost_kost_menu_categ"
+        action="srikost_kelompokkost_action"
+        sequence="10"/>
+
+</odoo>

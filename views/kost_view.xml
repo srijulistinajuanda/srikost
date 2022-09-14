@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    
+    <!-- srikost.kost tree view -->
+    <record id="srikost_kost_view_tree" model="ir.ui.view">
+        <field name="name">Daftar Kost</field>
+        <field name="model">srikost.kost</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name" />
+                <field name="alamat" />
+                <field name="waktu_sewa" />
+                <field name="harga_sewa" />
+                <field name="stok_kamar" />
+                <field name="ukuran_kost" />
+                <field name="kelompokkost_id" />
+                <field name="pemilikkost_id" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- srikost.barang form view -->
+    <record id="srikost_kost_view_form" model="ir.ui.view">
+        <field name="name">Form Kost</field>
+        <field name="model">srikost.kost</field>
+        <field name="arch" type="xml">
+            <form string="Kost">
+                <header>
+                    <button string="Input Kost Baru"
+                    name="%(srikost.kost_baru_action_wizzard)d"
+                    type="action"
+                    class="btn btn-primary my-3"/>
+                </header>
+
+                <sheet>
+                    <group name="Kost" string="Kost">
+                        <!-- Add your fields here -->
+                        <field name="name" />
+                        <field name="alamat" />
+                        <field name="waktu_sewa" />
+                        <field name="harga_sewa" />
+                        <field name="stok_kamar" />
+                        <field name="ukuran_kost" />
+                    </group>
+
+                    <group name="Kelompok Kost" string="Kelompok Kost">
+                        <field name="kelompokkost_id" />
+                    </group>
+                    <group name="Pemilik Kost" string="Pemilik Kost">
+                        <field name="pemilikkost_id" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- srikost.kost action window -->
+    <record id="srikost_kost_action" model="ir.actions.act_window">
+        <field name="name">Daftar Kost</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">srikost.kost</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem
+        id="srikost_kost_menu_act"
+        name="Daftar Kost"
+        parent="srikost_kost_menu_categ"
+        action="srikost_kost_action"
+        sequence="20"/>
+
+</odoo>

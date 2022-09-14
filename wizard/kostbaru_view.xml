@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- srikost.kostbaru form view -->
+    <record id="kost_baru_view_form_wizzard" model="ir.ui.view">
+        <field name="name">Kost Baru</field>
+        <field name="model">srikost.kostbaru</field>
+        <field name="arch" type="xml">
+            <form string="Form Kost Baru">
+                <group>
+                    <field name="kost_id" />
+                    <field name="jumlah" />
+                </group>
+
+                <footer>
+                    <button name='button_kost_baru'
+                            type='object'
+                            string='Simpan'
+                            class='btn btn-primary' />
+                    <button string='Cancel'
+                            special='cancel'
+                            class='btn btn-secondary' />
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- srikost.kost action window -->
+    <record id="kost_baru_action_wizzard" model="ir.actions.act_window">
+        <field name="name">Kost Baru</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">srikost.kostbaru</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref='kost_baru_view_form_wizzard' />
+        <field name="target">new</field>
+    </record>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem 
+        id="kost_baru_menu_action_wizzard"
+        name="Input Kost"
+        parent="srikost_menu_root"
+        action="kost_baru_action_wizzard"
+        sequence="48"/>
+
+</odoo>
