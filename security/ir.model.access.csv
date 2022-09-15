@@ -1,8 +1,6 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_srikost_kelompokkost,access.srikost.kelompokkost,model_srikost_kelompokkost,,1,1,1,1
 access_srikost_kost,access.srikost.kost,model_srikost_kost,,1,1,1,1
-access_srikost_person,access.srikost.person,model_srikost_person,,1,1,1,1
-access_srikost_pemilik,access.srikost.pemiik,model_srikost_pemilik,,1,1,1,1
 access_srikost_pemilikkost,access.srikost.pemilikkost,model_srikost_pemilikkost,,1,1,1,1
 access_srikost_detailpenjualan,access.srikost.detailpenjualan,model_srikost_detailpenjualan,,1,1,1,1
 access_srikost_penjualan,access.srikost.penjualan,model_srikost_penjualan,,1,1,1,1
